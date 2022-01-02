@@ -1,6 +1,11 @@
-def hello_world(name):
-    return f"Hello, {name}"
+class HelloWorld:
+    def __init__(self, name):
+        self.name = name
+
+    def __call__(self, *args, **kwargs):
+        print(f"Hello, {self.name}")
 
 
 if __name__ == "__main__":
-    print(hello_world("Charles"))
+    hello = HelloWorld("Charles")
+    hello()
